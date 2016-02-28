@@ -18,7 +18,7 @@ public class BabysitterWageCalculator {
 		return calculateBabysitterWagesInCalculationTime(startTime24, endTime24, bedTime24);
 	}
 
-	private int calculateBabysitterWagesInCalculationTime(int startTime, int endTime, int bedTime) throws ValidationException {
+	public int calculateBabysitterWagesInCalculationTime(int startTime, int endTime, int bedTime) throws ValidationException {
 		validateStartTimeAndEndTime(startTime, endTime);
 		
 		int totalPay = 0;

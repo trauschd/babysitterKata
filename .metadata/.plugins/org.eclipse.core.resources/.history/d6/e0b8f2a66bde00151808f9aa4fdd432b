@@ -1,6 +1,8 @@
 package com.babysitter;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +12,18 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class BabysitterWageCalculatorTest {
 	
 	private BabysitterWageCalculator calc = new BabysitterWageCalculator();
+	
+	@Test
+	public void whenCallingCalculator_convertsToCalculationTime() throws Exception {
+		SimpleTime startTime = new SimpleTime(5, false);
+		SimpleTime endTime = new SimpleTime(3, true);
+		SimpleTime bedTime = new SimpleTime(10, false);
+		
+		BabysitterWageCalculator calcSpy = spy(calc);
+		calcSpy.calculateBabysitterWages(startTime, endTime, bedTime);
+		verify(calcSpy).calculateBabysitterWagesInCalculationTime(5, 15, 10);
+	}
+	
 	
 	@Test(expected = ValidationException.class)
 	public void whenValidatingStartTime_throwsValidationException() throws Exception {
@@ -31,20 +45,12 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test(expected = ValidationException.class)
 	public void whenValidatingEndTime_throwsValidationExceptionWhenEndTimeAfterStartTime() throws Exception {
-		SimpleTime startTime = new SimpleTime(6, false);
-		SimpleTime endTime = new SimpleTime(5, false);
-		SimpleTime bedTime = new SimpleTime(10, false);
-		
-		calc.calculateBabysitterWages(startTime, endTime, bedTime);
+		calc.calculateBabysitterWagesInCalculationTime(6, 5, 0);
 	}
 	
 	@Test
 	public void whenCalculatingPay_calculatesNonEdgeCases() throws Exception {
-		SimpleTime startTime = new SimpleTime(5, false);
-		SimpleTime endTime = new SimpleTime(4, true);
-		SimpleTime bedTime = new SimpleTime(8, false);
-		
-		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
+		int totalPay = calc.calculateBabysitterWagesInCalculationTime(5, 16, 8);
 
 		int startingPay = 36;
 		int bedtimePay = 32;
@@ -56,11 +62,7 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test
 	public void whenCalculatingPay_calculatesBedTimeAfterMidnight() throws Exception {
-		SimpleTime startTime = new SimpleTime(6, false);
-		SimpleTime endTime = new SimpleTime(4, true);
-		SimpleTime bedTime = new SimpleTime(2, true);
-		
-		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
+		int totalPay = calc.calculateBabysitterWagesInCalculationTime(6, 16, 13);
 
 		int startingPay = 72;
 		int bedtimePay = 0;
@@ -72,11 +74,7 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test
 	public void whenCalculatingPay_calculatesEndTimeBeforeMidnight() throws Exception {
-		SimpleTime startTime = new SimpleTime(6, false);
-		SimpleTime endTime = new SimpleTime(11, false);
-		SimpleTime bedTime = new SimpleTime(10, false);
-		
-		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
+		int totalPay = calc.calculateBabysitterWagesInCalculationTime(6, 11, 10);
 
 		int startingPay = 48;
 		int bedtimePay = 8;
@@ -88,11 +86,7 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test
 	public void whenCalculatingPay_calculatesBedTimeAfterEndTime() throws Exception {
-		SimpleTime startTime = new SimpleTime(6, false);
-		SimpleTime endTime = new SimpleTime(10, false);
-		SimpleTime bedTime = new SimpleTime(11, false);
-		
-		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
+		int totalPay = calc.calculateBabysitterWagesInCalculationTime(6, 10, 11);
 
 		int startingPay = 48;
 		int bedtimePay = 0;
@@ -104,11 +98,7 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test
 	public void whenCalculatingPay_calculatesBedTimeBeforeStartTime() throws Exception {
-		SimpleTime startTime = new SimpleTime(9, false);
-		SimpleTime endTime = new SimpleTime(2, true);
-		SimpleTime bedTime = new SimpleTime(8, false);
-		
-		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
+		int totalPay = calc.calculateBabysitterWagesInCalculationTime(9, 14, 8);
 
 		int startingPay = 0;
 		int bedtimePay = 24;
