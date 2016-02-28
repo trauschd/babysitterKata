@@ -1,0 +1,16 @@
+package com.babysitter;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BabysitterWageCalculatorTest {
+	
+	private BabysitterWageCalculator calc = new BabysitterWageCalculator();
+	
+	@Test
+	public void whenValidatingStartTime_convertsToTwentyFour() throws Exception {
+		SimpleTime startTime = new SimpleTime(5, false);
+		
+	}
+}

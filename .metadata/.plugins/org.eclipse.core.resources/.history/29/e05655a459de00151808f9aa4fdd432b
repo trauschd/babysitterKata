@@ -1,0 +1,19 @@
+package com.babysitter;
+
+public class BabysitterWageCalculator {
+	
+	private SimpleTimeToTwentyFourHourConverter converter;
+	
+	public BabysitterWageCalculator(){
+		converter = new SimpleTimeToTwentyFourHourConverter();
+	}
+
+	public void calculateBabysitterWages(SimpleTime startTime, SimpleTime endTime, SimpleTime bedTime) {
+		
+	}
+
+	public void calculateBabysitterWagesInTwentyFourHourTime(int startTime, int endTime, int bedTime) {
+		
+	}
+	
+}

@@ -1,0 +1,15 @@
+package com.babysitter;
+
+public class SimpleTimeToTwentyFourHourConverter {
+
+	public int convertToTwentyFourHours(SimpleTime simpleTime) {
+		int twentyFourHours = simpleTime.getHour();
+		
+		if(simpleTime.isAm() && twentyFourHours == 12)
+			twentyFourHours = 0;
+		
+		
+		return -1;
+	}
+
+}

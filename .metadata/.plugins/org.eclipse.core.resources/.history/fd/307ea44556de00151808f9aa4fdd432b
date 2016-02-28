@@ -1,0 +1,10 @@
+package com.babysitter;
+
+public class BabysitterWageCalculator {
+
+	public void calculateBabysitterWages(SimpleTime startTime,
+			SimpleTime endTime, SimpleTime bedTime) {
+		
+	}
+	
+}

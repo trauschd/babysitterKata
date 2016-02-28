@@ -1,0 +1,9 @@
+package com.babysitter;
+
+public class SimpleTimeToTwentyFourHourConverter {
+
+	public int convertToTwentyFourHours(SimpleTime simpleTime) {
+		int twentyFourHours = simpleTime.getHour();
+	}
+
+}

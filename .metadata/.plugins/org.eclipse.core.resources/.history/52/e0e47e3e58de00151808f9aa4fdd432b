@@ -1,0 +1,10 @@
+package com.babysitter;
+
+public class SimpleTimeToTwentyFourHourConverter {
+
+	public void convertToTwentyFourHours(SimpleTime simpleTime) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.babysitter;
+
+public class BabysitterWageCalculator {
+
+	public void calculateBabysitterWages(SimpleTime startTime,
+			SimpleTime endTime, SimpleTime bedTime) {
+		
+	}
+
+	public void calculateBabysitterWagesInTwentyFourHourTime(int startTime, int endTime, int bedTime) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
