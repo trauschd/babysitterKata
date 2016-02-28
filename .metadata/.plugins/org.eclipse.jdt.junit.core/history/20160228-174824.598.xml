@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="BabysitterWageCalculatorTest" project="BabysitterKata" tests="8" started="8" failures="0" errors="0" ignored="0">
+  <testsuite name="com.babysitter.BabysitterWageCalculatorTest" time="0.012">
+    <testcase name="whenCalculatingPay_calculatesEndTimeBeforeMidnight" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.01"/>
+    <testcase name="whenValidatingStartTime_throwsValidationException" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.001"/>
+    <testcase name="whenCalculatingPay_calculatesNonEdgeCases" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+    <testcase name="whenValidatingEndTime_throwsValidationException" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+    <testcase name="whenCalculatingPay_calculatesBedTimeBeforeStartTime" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+    <testcase name="whenValidatingEndTime_throwsValidationExceptionWhenEndTimeAfterStartTime" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.001"/>
+    <testcase name="whenCalculatingPay_calculatesBedTimeAfterMidnight" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+    <testcase name="whenCalculatingPay_calculatesBedTimeAfterEndTime" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+  </testsuite>
+</testrun>

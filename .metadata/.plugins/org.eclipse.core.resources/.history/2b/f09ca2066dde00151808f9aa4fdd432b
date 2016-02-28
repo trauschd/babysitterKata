@@ -1,9 +1,6 @@
 package com.babysitter;
 
 public class SimpleTime {
-	public static final boolean AM = true;
-	public static final boolean PM = false;
-	
 	private int hour;
 	private boolean isAm;	
 	

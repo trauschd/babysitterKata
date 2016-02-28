@@ -13,36 +13,36 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test(expected = ValidationException.class)
 	public void whenValidatingStartTime_throwsValidationException() throws Exception {
-		SimpleTime startTime = new SimpleTime(4, SimpleTime.PM);
-		SimpleTime endTime = new SimpleTime(3, SimpleTime.AM);
-		SimpleTime bedTime = new SimpleTime(10, SimpleTime.PM);
+		SimpleTime startTime = new SimpleTime(4, SimpleTime.AM);
+		SimpleTime endTime = new SimpleTime(3, true);
+		SimpleTime bedTime = new SimpleTime(10, SimpleTime.AM);
 		
 		calc.calculateBabysitterWages(startTime, endTime, bedTime);
 	}
 	
 	@Test(expected = ValidationException.class)
 	public void whenValidatingEndTime_throwsValidationException() throws Exception {
-		SimpleTime startTime = new SimpleTime(5, SimpleTime.PM);
-		SimpleTime endTime = new SimpleTime(5, SimpleTime.AM);
-		SimpleTime bedTime = new SimpleTime(10, SimpleTime.PM);
+		SimpleTime startTime = new SimpleTime(5, SimpleTime.AM);
+		SimpleTime endTime = new SimpleTime(5, true);
+		SimpleTime bedTime = new SimpleTime(10, SimpleTime.AM);
 		
 		calc.calculateBabysitterWages(startTime, endTime, bedTime);
 	}
 	
 	@Test(expected = ValidationException.class)
 	public void whenValidatingEndTime_throwsValidationExceptionWhenEndTimeAfterStartTime() throws Exception {
-		SimpleTime startTime = new SimpleTime(6, SimpleTime.PM);
-		SimpleTime endTime = new SimpleTime(5, SimpleTime.PM);
-		SimpleTime bedTime = new SimpleTime(10, SimpleTime.PM);
+		SimpleTime startTime = new SimpleTime(6, SimpleTime.AM);
+		SimpleTime endTime = new SimpleTime(5, SimpleTime.AM);
+		SimpleTime bedTime = new SimpleTime(10, SimpleTime.AM);
 		
 		calc.calculateBabysitterWages(startTime, endTime, bedTime);
 	}
 	
 	@Test
 	public void whenCalculatingPay_calculatesNonEdgeCases() throws Exception {
-		SimpleTime startTime = new SimpleTime(5, SimpleTime.PM);
-		SimpleTime endTime = new SimpleTime(4, SimpleTime.AM);
-		SimpleTime bedTime = new SimpleTime(8, SimpleTime.PM);
+		SimpleTime startTime = new SimpleTime(5, SimpleTime.AM);
+		SimpleTime endTime = new SimpleTime(4, true);
+		SimpleTime bedTime = new SimpleTime(8, SimpleTime.AM);
 		
 		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
 
@@ -56,9 +56,9 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test
 	public void whenCalculatingPay_calculatesBedTimeAfterMidnight() throws Exception {
-		SimpleTime startTime = new SimpleTime(6, SimpleTime.PM);
-		SimpleTime endTime = new SimpleTime(4, SimpleTime.AM);
-		SimpleTime bedTime = new SimpleTime(2, SimpleTime.AM);
+		SimpleTime startTime = new SimpleTime(6, false);
+		SimpleTime endTime = new SimpleTime(4, true);
+		SimpleTime bedTime = new SimpleTime(2, true);
 		
 		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
 
@@ -72,9 +72,9 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test
 	public void whenCalculatingPay_calculatesEndTimeBeforeMidnight() throws Exception {
-		SimpleTime startTime = new SimpleTime(6, SimpleTime.PM);
-		SimpleTime endTime = new SimpleTime(11, SimpleTime.PM);
-		SimpleTime bedTime = new SimpleTime(10, SimpleTime.PM);
+		SimpleTime startTime = new SimpleTime(6, false);
+		SimpleTime endTime = new SimpleTime(11, false);
+		SimpleTime bedTime = new SimpleTime(10, false);
 		
 		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
 
@@ -88,9 +88,9 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test
 	public void whenCalculatingPay_calculatesBedTimeAfterEndTime() throws Exception {
-		SimpleTime startTime = new SimpleTime(6, SimpleTime.PM);
-		SimpleTime endTime = new SimpleTime(10, SimpleTime.PM);
-		SimpleTime bedTime = new SimpleTime(11, SimpleTime.PM);
+		SimpleTime startTime = new SimpleTime(6, false);
+		SimpleTime endTime = new SimpleTime(10, false);
+		SimpleTime bedTime = new SimpleTime(11, false);
 		
 		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
 
@@ -104,9 +104,9 @@ public class BabysitterWageCalculatorTest {
 	
 	@Test
 	public void whenCalculatingPay_calculatesBedTimeBeforeStartTime() throws Exception {
-		SimpleTime startTime = new SimpleTime(9, SimpleTime.PM);
-		SimpleTime endTime = new SimpleTime(2, SimpleTime.AM);
-		SimpleTime bedTime = new SimpleTime(8, SimpleTime.PM);
+		SimpleTime startTime = new SimpleTime(9, false);
+		SimpleTime endTime = new SimpleTime(2, true);
+		SimpleTime bedTime = new SimpleTime(8, false);
 		
 		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
 
