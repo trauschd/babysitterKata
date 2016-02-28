@@ -1,0 +1,268 @@
+!SESSION 2016-02-28 14:26:07.540 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.equinox.ds 2 0 2016-02-28 14:26:48.299
+!MESSAGE [SCR] Enabling components of bundle org.eclipse.ui.trace did not complete in 30000 ms 
+
+!ENTRY org.eclipse.equinox.ds 2 0 2016-02-28 14:26:48.302
+!MESSAGE [SCR - WorkThread] Timeout occurred! Thread was blocked on processing [QueuedJob] WorkPerformer: org.eclipse.equinox.internal.ds.SCRManager@7163238; actionType 1
+
+!ENTRY org.eclipse.core.runtime 4 0 2016-02-28 14:26:53.348
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="org.eclipse.core.runtime"; type="osgi.bundle"; version:Version="3.10.0.v20140318-2214"; singleton:="true" [id=86] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.ui 4 4 2016-02-28 14:28:47.000
+!MESSAGE Referenced part does not exist yet: com.ibm.etools.ui.navigator.SDExplorer.
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-02-28 14:29:04.163
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\TRAUSCHD'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.moreunit 1 0 2016-02-28 14:31:39.306
+!MESSAGE No method found surrounding cursor position.
+
+!ENTRY org.moreunit.mock 1 0 2016-02-28 14:31:39.695
+!MESSAGE Loaded bundleentry://1071.fwk1707129675/templates/easymock.xml: [Category [id=org.moreunit.mock.easymock]]
+
+!ENTRY org.moreunit.mock 1 0 2016-02-28 14:31:39.700
+!MESSAGE Loaded bundleentry://1071.fwk1707129675/templates/jmock2.xml: [Category [id=org.moreunit.mock.jmock2]]
+
+!ENTRY org.moreunit.mock 1 0 2016-02-28 14:31:39.703
+!MESSAGE Loaded bundleentry://1071.fwk1707129675/templates/jmockit.xml: [Category [id=org.moreunit.mock.jmockit]]
+
+!ENTRY org.moreunit.mock 1 0 2016-02-28 14:31:39.709
+!MESSAGE Loaded bundleentry://1071.fwk1707129675/templates/mockito.xml: [Category [id=org.moreunit.mock.mockito]]
+
+!ENTRY org.moreunit 1 0 2016-02-28 14:31:39.716
+!MESSAGE Calling extension: org.moreunit.mock.wizard.NewTestCaseWizardParticipator.getPages()
+
+!ENTRY org.moreunit 1 0 2016-02-28 14:31:43.313
+!MESSAGE Calling extension: org.moreunit.mock.wizard.NewTestCaseWizardParticipator.testCaseCreated()
+
+!ENTRY org.moreunit.core 4 2 2016-02-28 14:31:43.314
+!MESSAGE Problems occurred when invoking code from plug-in: "org.moreunit.core".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:476)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:348)
+	at org.eclipse.swt.widgets.Combo.getSelectionIndex(Combo.java:1295)
+	at org.moreunit.mock.preferences.TemplateStyleSelector.determineSelectedTemplate(TemplateStyleSelector.java:233)
+	at org.moreunit.mock.preferences.TemplateStyleSelector.getSelectedTemplate(TemplateStyleSelector.java:258)
+	at org.moreunit.mock.preferences.TemplateStyleSelector.savePreferences(TemplateStyleSelector.java:216)
+	at org.moreunit.mock.wizard.MockDependenciesWizardPage.validated(MockDependenciesWizardPage.java:422)
+	at org.moreunit.mock.wizard.MockDependenciesPageManager.pageValidated(MockDependenciesPageManager.java:73)
+	at org.moreunit.mock.wizard.NewTestCaseWizardParticipator.testCaseCreated(NewTestCaseWizardParticipator.java:66)
+	at org.moreunit.wizards.NewTestCaseWizardParticipatorManager$3.run(NewTestCaseWizardParticipatorManager.java:131)
+	at org.moreunit.wizards.NewTestCaseWizardParticipatorManager$3.run(NewTestCaseWizardParticipatorManager.java:1)
+	at org.moreunit.core.util.ExtendedSafeRunner$GenericRunnable.doRun(ExtendedSafeRunner.java:21)
+	at org.moreunit.core.util.ExtendedSafeRunner$GenericRunnable.access$0(ExtendedSafeRunner.java:19)
+	at org.moreunit.core.util.ExtendedSafeRunner$SafeRunnable.run(ExtendedSafeRunner.java:64)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.moreunit.core.util.ExtendedSafeRunner.run(ExtendedSafeRunner.java:43)
+	at org.moreunit.core.util.ExtendedSafeRunner.applyTo(ExtendedSafeRunner.java:27)
+	at org.moreunit.core.util.ExtendedSafeRunner.applyTo(ExtendedSafeRunner.java:36)
+	at org.moreunit.wizards.NewTestCaseWizardParticipatorManager.testCaseCreated(NewTestCaseWizardParticipatorManager.java:121)
+	at org.moreunit.wizards.NewTestCaseWizardParticipatorManager.testCaseCreated(NewTestCaseWizardParticipatorManager.java:115)
+	at org.moreunit.wizards.NewTestCaseWizard.typeCreated(NewTestCaseWizard.java:122)
+	at org.moreunit.wizards.NewClassyWizard.open(NewClassyWizard.java:41)
+	at org.moreunit.elements.TypeFacade$OpenNewClassWizard.getCorrespondingMember(TypeFacade.java:320)
+	at org.moreunit.elements.TypeFacade.getOneCorrespondingMember(TypeFacade.java:130)
+	at org.moreunit.handler.JumpActionExecutor.executeJumpAction(JumpActionExecutor.java:106)
+	at org.moreunit.handler.JumpActionExecutor.executeJumpAction(JumpActionExecutor.java:80)
+	at org.moreunit.handler.Jumper.jump(Jumper.java:14)
+	at org.moreunit.core.extension.JumperExtensionManager$1.run(JumperExtensionManager.java:38)
+	at org.moreunit.core.extension.JumperExtensionManager$1.run(JumperExtensionManager.java:1)
+	at org.moreunit.core.util.ExtendedSafeRunner$GenericRunnable.doRun(ExtendedSafeRunner.java:21)
+	at org.moreunit.core.util.ExtendedSafeRunner$GenericRunnable.access$0(ExtendedSafeRunner.java:19)
+	at org.moreunit.core.util.ExtendedSafeRunner$SafeRunnable.run(ExtendedSafeRunner.java:64)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.moreunit.core.util.ExtendedSafeRunner.run(ExtendedSafeRunner.java:43)
+	at org.moreunit.core.util.ExtendedSafeRunner.applyTo(ExtendedSafeRunner.java:27)
+	at org.moreunit.core.extension.JumperExtensionManager.jump(JumperExtensionManager.java:26)
+	at org.moreunit.core.commands.JumpActionExecutor.execute(JumpActionExecutor.java:33)
+	at org.moreunit.core.commands.JumpActionExecutor.execute(JumpActionExecutor.java:22)
+	at org.moreunit.core.commands.JumpActionHandler.execute(JumpActionHandler.java:16)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:229)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:149)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:286)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:507)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:558)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:378)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:324)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:86)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1262)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1085)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1070)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1112)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1108)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1529)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4722)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:343)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4610)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5036)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3759)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.moreunit 4 0 2016-02-28 14:31:43.315
+!MESSAGE Error calling extension: org.moreunit.mock.wizard.NewTestCaseWizardParticipator.testCaseCreated()
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:476)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:348)
+	at org.eclipse.swt.widgets.Combo.getSelectionIndex(Combo.java:1295)
+	at org.moreunit.mock.preferences.TemplateStyleSelector.determineSelectedTemplate(TemplateStyleSelector.java:233)
+	at org.moreunit.mock.preferences.TemplateStyleSelector.getSelectedTemplate(TemplateStyleSelector.java:258)
+	at org.moreunit.mock.preferences.TemplateStyleSelector.savePreferences(TemplateStyleSelector.java:216)
+	at org.moreunit.mock.wizard.MockDependenciesWizardPage.validated(MockDependenciesWizardPage.java:422)
+	at org.moreunit.mock.wizard.MockDependenciesPageManager.pageValidated(MockDependenciesPageManager.java:73)
+	at org.moreunit.mock.wizard.NewTestCaseWizardParticipator.testCaseCreated(NewTestCaseWizardParticipator.java:66)
+	at org.moreunit.wizards.NewTestCaseWizardParticipatorManager$3.run(NewTestCaseWizardParticipatorManager.java:131)
+	at org.moreunit.wizards.NewTestCaseWizardParticipatorManager$3.run(NewTestCaseWizardParticipatorManager.java:1)
+	at org.moreunit.core.util.ExtendedSafeRunner$GenericRunnable.doRun(ExtendedSafeRunner.java:21)
+	at org.moreunit.core.util.ExtendedSafeRunner$GenericRunnable.access$0(ExtendedSafeRunner.java:19)
+	at org.moreunit.core.util.ExtendedSafeRunner$SafeRunnable.run(ExtendedSafeRunner.java:64)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.moreunit.core.util.ExtendedSafeRunner.run(ExtendedSafeRunner.java:43)
+	at org.moreunit.core.util.ExtendedSafeRunner.applyTo(ExtendedSafeRunner.java:27)
+	at org.moreunit.core.util.ExtendedSafeRunner.applyTo(ExtendedSafeRunner.java:36)
+	at org.moreunit.wizards.NewTestCaseWizardParticipatorManager.testCaseCreated(NewTestCaseWizardParticipatorManager.java:121)
+	at org.moreunit.wizards.NewTestCaseWizardParticipatorManager.testCaseCreated(NewTestCaseWizardParticipatorManager.java:115)
+	at org.moreunit.wizards.NewTestCaseWizard.typeCreated(NewTestCaseWizard.java:122)
+	at org.moreunit.wizards.NewClassyWizard.open(NewClassyWizard.java:41)
+	at org.moreunit.elements.TypeFacade$OpenNewClassWizard.getCorrespondingMember(TypeFacade.java:320)
+	at org.moreunit.elements.TypeFacade.getOneCorrespondingMember(TypeFacade.java:130)
+	at org.moreunit.handler.JumpActionExecutor.executeJumpAction(JumpActionExecutor.java:106)
+	at org.moreunit.handler.JumpActionExecutor.executeJumpAction(JumpActionExecutor.java:80)
+	at org.moreunit.handler.Jumper.jump(Jumper.java:14)
+	at org.moreunit.core.extension.JumperExtensionManager$1.run(JumperExtensionManager.java:38)
+	at org.moreunit.core.extension.JumperExtensionManager$1.run(JumperExtensionManager.java:1)
+	at org.moreunit.core.util.ExtendedSafeRunner$GenericRunnable.doRun(ExtendedSafeRunner.java:21)
+	at org.moreunit.core.util.ExtendedSafeRunner$GenericRunnable.access$0(ExtendedSafeRunner.java:19)
+	at org.moreunit.core.util.ExtendedSafeRunner$SafeRunnable.run(ExtendedSafeRunner.java:64)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.moreunit.core.util.ExtendedSafeRunner.run(ExtendedSafeRunner.java:43)
+	at org.moreunit.core.util.ExtendedSafeRunner.applyTo(ExtendedSafeRunner.java:27)
+	at org.moreunit.core.extension.JumperExtensionManager.jump(JumperExtensionManager.java:26)
+	at org.moreunit.core.commands.JumpActionExecutor.execute(JumpActionExecutor.java:33)
+	at org.moreunit.core.commands.JumpActionExecutor.execute(JumpActionExecutor.java:22)
+	at org.moreunit.core.commands.JumpActionHandler.execute(JumpActionHandler.java:16)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:229)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:149)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:286)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:507)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:558)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:378)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:324)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:86)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1262)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1085)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1070)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1112)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1108)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1529)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4722)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:343)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4610)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5036)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3759)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
