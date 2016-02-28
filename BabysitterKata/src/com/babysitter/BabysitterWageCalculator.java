@@ -1,24 +1,24 @@
 package com.babysitter;
 
 public class BabysitterWageCalculator {
-	private static final int FIVE_PM = 17;
-	private static final int FOUR_AM = 4;
-	private static final int TWELVE_AM = 24;
+	private static final int FIVE_PM = 5;
+	private static final int FOUR_AM = 16;
+	private static final int TWELVE_AM = 12;
 	
 	private static final int START_PAY = 12;
 	private static final int BED_PAY = 8;
 	private static final int MIDNIGHT_PAY = 16;
 
 	public int calculateBabysitterWages(SimpleTime startTime, SimpleTime endTime, SimpleTime bedTime) throws ValidationException {
-		SimpleTimeToTwentyFourHourConverter converter = new SimpleTimeToTwentyFourHourConverter();
-		int startTime24 = converter.convertToTwentyFourHours(startTime);
-		int endTime24 = converter.convertToTwentyFourHours(endTime);
-		int bedTime24 = converter.convertToTwentyFourHours(bedTime);
+		SimpleTimeCalculationConverter converter = new SimpleTimeCalculationConverter();
+		int startTime24 = converter.convertToCalculationTime(startTime);
+		int endTime24 = converter.convertToCalculationTime(endTime);
+		int bedTime24 = converter.convertToCalculationTime(bedTime);
 		
-		return calculateBabysitterWagesInTwentyFourHourTime(startTime24, endTime24, bedTime24);
+		return calculateBabysitterWagesInCalculationTime(startTime24, endTime24, bedTime24);
 	}
 
-	public int calculateBabysitterWagesInTwentyFourHourTime(int startTime, int endTime, int bedTime) throws ValidationException {
+	public int calculateBabysitterWagesInCalculationTime(int startTime, int endTime, int bedTime) throws ValidationException {
 		validateStartTimeAndEndTime(startTime, endTime);
 		
 		int totalPay = 0;
@@ -38,15 +38,24 @@ public class BabysitterWageCalculator {
 	}
 	
 	private int calculateStartTimePay(int startTime, int bedTime) {
-		return (bedTime - startTime) * START_PAY;
+		int calculatedBedTime = bedTime;
+		if(bedTime > TWELVE_AM){
+			calculatedBedTime = TWELVE_AM;
+		}
+		
+		return (calculatedBedTime - startTime) * START_PAY;
 	}
 	
 	private int calculateBedTimePay(int bedTime) {
+		if(bedTime > TWELVE_AM){
+			return 0;
+		}
+		
 		return (TWELVE_AM - bedTime) * BED_PAY;
 	}
 
 	private int calculateMidnightPay(int endTime) {
-		return endTime * MIDNIGHT_PAY;
+		return (endTime - TWELVE_AM) * MIDNIGHT_PAY;
 	}
 	
 }

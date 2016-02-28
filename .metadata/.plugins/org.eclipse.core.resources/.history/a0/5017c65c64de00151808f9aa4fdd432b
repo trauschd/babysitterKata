@@ -1,0 +1,13 @@
+package com.babysitter;
+
+public class SimpleTimeCalculationConverter {
+
+	public int convertToCalculationTime(SimpleTime simpleTime) {
+		int calcTime = simpleTime.getHour();
+		
+		
+				
+		return calcTime;
+	}
+
+}

@@ -14,33 +14,45 @@ public class BabysitterWageCalculatorTest {
 	private BabysitterWageCalculator calc = new BabysitterWageCalculator();
 	
 	@Test
-	public void whenCallingCalculator_convertsToTwentyFourTime() throws Exception {
+	public void whenCallingCalculator_convertsToCalculationTime() throws Exception {
 		SimpleTime startTime = new SimpleTime(5, false);
 		SimpleTime endTime = new SimpleTime(3, true);
 		SimpleTime bedTime = new SimpleTime(10, false);
 		
 		BabysitterWageCalculator calcSpy = spy(calc);
 		calcSpy.calculateBabysitterWages(startTime, endTime, bedTime);
-		verify(calcSpy).calculateBabysitterWagesInTwentyFourHourTime(17, 3, 22);
+		verify(calcSpy).calculateBabysitterWagesInCalculationTime(5, 15, 10);
 	}
 	
 	
 	@Test(expected = ValidationException.class)
 	public void whenValidatingStartTime_throwsValidationException() throws Exception {
-		calc.calculateBabysitterWagesInTwentyFourHourTime(4, 0, 0);
+		calc.calculateBabysitterWagesInCalculationTime(4, 0, 0);
 	}
 	
 	@Test(expected = ValidationException.class)
 	public void whenValidatingEndTime_throwsValidationException() throws Exception {
-		calc.calculateBabysitterWagesInTwentyFourHourTime(17, 5, 0);
+		calc.calculateBabysitterWagesInCalculationTime(5, 17, 0);
 	}
 	
 	@Test
 	public void whenCalculatingPay_calculatesNonEdgeCases() throws Exception {
-		int totalPay = calc.calculateBabysitterWagesInTwentyFourHourTime(17, 4, 20);
+		int totalPay = calc.calculateBabysitterWagesInCalculationTime(5, 16, 8);
 
 		int startingPay = 36;
 		int bedtimePay = 32;
+		int midnightPay = 64;
+		
+		int expectedPay = startingPay + bedtimePay + midnightPay;
+		assertEquals(expectedPay, totalPay);
+	}
+	
+	@Test
+	public void whenCalculatingPay_calculatesBedTimeAfterMidnight() throws Exception {
+		int totalPay = calc.calculateBabysitterWagesInCalculationTime(6, 16, 13);
+
+		int startingPay = 72;
+		int bedtimePay = 0;
 		int midnightPay = 64;
 		
 		int expectedPay = startingPay + bedtimePay + midnightPay;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="SimpleTimeCalculationConverterTest" project="BabysitterKata" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.babysitter.SimpleTimeCalculationConverterTest" time="0.0">
+    <testcase name="whenConverting12AM_convertsTo12" classname="com.babysitter.SimpleTimeCalculationConverterTest" time="0.0"/>
+    <testcase name="whenConverting11AM_convertsTo23" classname="com.babysitter.SimpleTimeCalculationConverterTest" time="0.0"/>
+    <testcase name="whenConverting11PM_convertsTo11" classname="com.babysitter.SimpleTimeCalculationConverterTest" time="0.0"/>
+  </testsuite>
+</testrun>
