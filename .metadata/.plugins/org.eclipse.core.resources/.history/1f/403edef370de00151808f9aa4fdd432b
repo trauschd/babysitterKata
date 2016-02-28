@@ -121,30 +121,14 @@ public class BabysitterWageCalculatorTest {
 	@Test
 	public void whenCalculatingPay_calculatesStartTimeAfterMidnight() throws Exception {
 		SimpleTime startTime = new SimpleTime(1, SimpleTime.AM);
-		SimpleTime endTime = new SimpleTime(3, SimpleTime.AM);
-		SimpleTime bedTime = new SimpleTime(9, SimpleTime.PM);
+		SimpleTime endTime = new SimpleTime(2, SimpleTime.AM);
+		SimpleTime bedTime = new SimpleTime(2, SimpleTime.AM);
 		
 		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
 
 		int startingPay = 0;
 		int bedtimePay = 0;
-		int midnightPay = 32;
-		
-		int expectedPay = startingPay + bedtimePay + midnightPay;
-		assertEquals(expectedPay, totalPay);
-	}
-	
-	@Test
-	public void whenCalculatingPay_calculatesStartTimeAfterMidnightNoBedtime() throws Exception {
-		SimpleTime startTime = new SimpleTime(1, SimpleTime.AM);
-		SimpleTime endTime = new SimpleTime(3, SimpleTime.AM);
-		SimpleTime bedTime = new SimpleTime(5, SimpleTime.AM);
-		
-		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
-
-		int startingPay = 0;
-		int bedtimePay = 0;
-		int midnightPay = 32;
+		int midnightPay = 16;
 		
 		int expectedPay = startingPay + bedtimePay + midnightPay;
 		assertEquals(expectedPay, totalPay);

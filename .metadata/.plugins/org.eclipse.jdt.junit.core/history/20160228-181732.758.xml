@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="com.babysitter" project="BabysitterKata" tests="13" started="13" failures="0" errors="0" ignored="0">
+  <testsuite name="com.babysitter.SimpleTimeCalculationConverterTest" time="0.007">
+    <testcase name="whenConverting12AM_convertsTo12" classname="com.babysitter.SimpleTimeCalculationConverterTest" time="0.0"/>
+    <testcase name="whenConverting11AM_convertsTo23" classname="com.babysitter.SimpleTimeCalculationConverterTest" time="0.0"/>
+    <testcase name="whenConverting11PM_convertsTo11" classname="com.babysitter.SimpleTimeCalculationConverterTest" time="0.007"/>
+  </testsuite>
+  <testsuite name="com.babysitter.BabysitterWageCalculatorTest" time="0.059">
+    <testcase name="whenCalculatingPay_calculatesEndTimeBeforeMidnight" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.056"/>
+    <testcase name="whenValidatingStartTime_throwsValidationException" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+    <testcase name="whenCalculatingPay_calculatesNonEdgeCases" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.001"/>
+    <testcase name="whenValidatingEndTime_throwsValidationException" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+    <testcase name="whenCalculatingPay_calculatesBedTimeBeforeStartTime" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.001"/>
+    <testcase name="whenValidatingEndTime_throwsValidationExceptionWhenEndTimeAfterStartTime" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+    <testcase name="whenCalculatingPay_calculatesStartTimeAfterMidnightNoBedtime" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.001"/>
+    <testcase name="whenCalculatingPay_calculatesBedTimeAfterMidnight" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+    <testcase name="whenCalculatingPay_calculatesStartTimeAfterMidnight" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+    <testcase name="whenCalculatingPay_calculatesBedTimeAfterEndTime" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.0"/>
+  </testsuite>
+</testrun>
