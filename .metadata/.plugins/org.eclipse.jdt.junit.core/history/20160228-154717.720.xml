@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="BabysitterWageCalculatorTest" project="BabysitterKata" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.babysitter.BabysitterWageCalculatorTest" time="0.111">
+    <testcase name="whenValidatingStartTime_throwsValidationException" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.011"/>
+    <testcase name="whenValidatingEndTime_throwsValidationException" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.001"/>
+    <testcase name="whenCallingCalculator_convertsToTwentyFourTime" classname="com.babysitter.BabysitterWageCalculatorTest" time="0.099"/>
+  </testsuite>
+</testrun>
