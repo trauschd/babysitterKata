@@ -1,0 +1,71 @@
+package com.babysitter;
+
+public class BabysitterWageCalculator {
+	private static final int FIVE_PM = 5;
+	private static final int FOUR_AM = 16;
+	private static final int TWELVE_AM = 12;
+	
+	private static final int START_PAY = 12;
+	private static final int BED_PAY = 8;
+	private static final int MIDNIGHT_PAY = 16;
+
+	public int calculateBabysitterWages(SimpleTime startTime, SimpleTime endTime, SimpleTime bedTime) throws ValidationException {
+		SimpleTimeCalculationConverter converter = new SimpleTimeCalculationConverter();
+		int startTime24 = converter.convertToCalculationTime(startTime);
+		int endTime24 = converter.convertToCalculationTime(endTime);
+		int bedTime24 = converter.convertToCalculationTime(bedTime);
+		
+		return calculateBabysitterWagesInCalculationTime(startTime24, endTime24, bedTime24);
+	}
+
+	public int calculateBabysitterWagesInCalculationTime(int startTime, int endTime, int bedTime) throws ValidationException {
+		validateStartTimeAndEndTime(startTime, endTime);
+		
+		int totalPay = 0;
+		totalPay += calculateStartTimePay(startTime, bedTime);
+		totalPay += calculateBedTimePay(bedTime, endTime);
+		totalPay += calculateMidnightPay(endTime);
+		
+		return totalPay;
+	}
+
+	private void validateStartTimeAndEndTime(int startTime, int endTime) throws ValidationException {
+		if(startTime < FIVE_PM)
+			throw new ValidationException();
+		
+		if(endTime > FOUR_AM)
+			throw new ValidationException();
+	}
+	
+	private int calculateStartTimePay(int startTime, int bedTime) {
+		int calculatedBedTime = bedTime;
+		if(bedTime > TWELVE_AM){
+			calculatedBedTime = TWELVE_AM;
+		}
+		
+		return (calculatedBedTime - startTime) * START_PAY;
+	}
+	
+	private int calculateBedTimePay(int bedTime, int endTime) {
+		if(bedTime > TWELVE_AM){
+			return 0;
+		}
+		
+		int calculatedEndTime = TWELVE_AM;
+		
+		if(endTime < TWELVE_AM){
+			calculatedEndTime = endTime;
+		}
+		
+		return (calculatedEndTime - bedTime) * BED_PAY;
+	}
+
+	private int calculateMidnightPay(int endTime) {
+		if(TWELVE_AM > endTime){
+			return 0;
+		}
+		
+		return (endTime - TWELVE_AM) * MIDNIGHT_PAY;
+	}
+	
+}

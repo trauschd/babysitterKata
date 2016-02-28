@@ -22,39 +22,65 @@ public class BabysitterWageCalculator {
 		validateStartTimeAndEndTime(startTime, endTime);
 		
 		int totalPay = 0;
-		totalPay += calculateStartTimePay(startTime, bedTime);
-		totalPay += calculateBedTimePay(bedTime);
+		totalPay += calculateStartTimePay(startTime, endTime, bedTime);
+		totalPay += calculateBedTimePay(startTime, endTime, bedTime);
 		totalPay += calculateMidnightPay(endTime);
 		
 		return totalPay;
 	}
 
 	private void validateStartTimeAndEndTime(int startTime, int endTime) throws ValidationException {
-		if(startTime < FIVE_PM)
+		if(startTime < FIVE_PM){
 			throw new ValidationException();
+		}
 		
-		if(endTime > FOUR_AM)
+		if(endTime > FOUR_AM){
 			throw new ValidationException();
+		}
+		
+		if(startTime > endTime){
+			throw new ValidationException();
+		}
 	}
 	
-	private int calculateStartTimePay(int startTime, int bedTime) {
+	private int calculateStartTimePay(int startTime, int endTime, int bedTime) {
+		if(startTime > bedTime){
+			return 0;
+		}
+		
 		int calculatedBedTime = bedTime;
 		if(bedTime > TWELVE_AM){
 			calculatedBedTime = TWELVE_AM;
+		} else if(bedTime > endTime){
+			calculatedBedTime = endTime;
 		}
 		
 		return (calculatedBedTime - startTime) * START_PAY;
 	}
 	
-	private int calculateBedTimePay(int bedTime) {
-		if(bedTime > TWELVE_AM){
+	private int calculateBedTimePay(int startTime, int endTime, int bedTime) {
+		if(bedTime > TWELVE_AM || bedTime > endTime){
 			return 0;
 		}
+
+		int calculatedBedTime = bedTime;
+		if(startTime > bedTime){
+			calculatedBedTime = startTime;
+		}
 		
-		return (TWELVE_AM - bedTime) * BED_PAY;
+		int calculatedEndTime = TWELVE_AM;
+		if(endTime < TWELVE_AM){
+			calculatedEndTime = endTime;
+		}
+		
+		return (calculatedEndTime - calculatedBedTime) * BED_PAY;
 	}
 
 	private int calculateMidnightPay(int endTime) {
+		if(TWELVE_AM > endTime){
+			return 0;
+		}
+		
 		return (endTime - TWELVE_AM) * MIDNIGHT_PAY;
 	}
 	
