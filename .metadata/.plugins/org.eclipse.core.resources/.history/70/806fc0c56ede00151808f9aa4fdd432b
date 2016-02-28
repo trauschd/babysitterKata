@@ -24,7 +24,7 @@ public class BabysitterWageCalculator {
 		int totalPay = 0;
 		totalPay += calculateStartTimePay(startTime, endTime, bedTime);
 		totalPay += calculateBedTimePay(startTime, endTime, bedTime);
-		totalPay += calculateMidnightPay(startTime, endTime);
+		totalPay += calculateMidnightPay(endTime);
 		
 		return totalPay;
 	}
