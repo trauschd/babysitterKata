@@ -77,7 +77,7 @@ public class BabysitterWageCalculator {
 	}
 
 	private int calculateMidnightPay(int startTime, int endTime) {
-		if(TWELVE_AM >= endTime){
+		if(TWELVE_AM > endTime){
 			return 0;
 		}
 		

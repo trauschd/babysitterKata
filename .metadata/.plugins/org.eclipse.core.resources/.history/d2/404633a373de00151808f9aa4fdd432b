@@ -44,7 +44,7 @@ public class BabysitterWageCalculator {
 	}
 	
 	private int calculateStartTimePay(int startTime, int endTime, int bedTime) {
-		if(startTime >= bedTime || startTime >= TWELVE_AM){
+		if(startTime > bedTime || startTime > TWELVE_AM){
 			return 0;
 		}
 		
@@ -59,7 +59,7 @@ public class BabysitterWageCalculator {
 	}
 	
 	private int calculateBedTimePay(int startTime, int endTime, int bedTime) {
-		if(bedTime >= TWELVE_AM || bedTime >= endTime || startTime >= TWELVE_AM){
+		if(bedTime > TWELVE_AM || bedTime > endTime || startTime > TWELVE_AM){
 			return 0;
 		}
 
@@ -77,7 +77,7 @@ public class BabysitterWageCalculator {
 	}
 
 	private int calculateMidnightPay(int startTime, int endTime) {
-		if(TWELVE_AM >= endTime){
+		if(TWELVE_AM > endTime){
 			return 0;
 		}
 		

@@ -153,7 +153,7 @@ public class BabysitterWageCalculatorTest {
 	@Test
 	public void whenCalculatingPay_calculatesStartTimeEqualToBedtime() throws Exception {
 		SimpleTime startTime = new SimpleTime(8, SimpleTime.PM);
-		SimpleTime endTime = new SimpleTime(2, SimpleTime.AM);
+		SimpleTime endTime = new SimpleTime(3, SimpleTime.AM);
 		SimpleTime bedTime = new SimpleTime(8, SimpleTime.PM);
 		
 		int totalPay = calc.calculateBabysitterWages(startTime, endTime, bedTime);
